@@ -44,7 +44,7 @@ const Navbar = () => {
             <Link className="cursor-pointer" to="/" onClick={closeMenu}>
               <img
                 className=" object-cover object-center h-8 mix-blend-plus-lighter"
-                src="/src/assets/img/logo-n.png"
+                src="/src/pages/img/logo-n.png"
                 alt=""
               />
             </Link>

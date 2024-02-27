@@ -8,7 +8,7 @@ const Foodbox = () => {
      <Link to={"/detail"}>
      <div
       className=" relative h-[30vh] w-[40vh] rounded-xl bg-cover bg-center"
-      style={{ backgroundImage: `url("/src/assets/img/pizza.jpg")` }}
+      style={{ backgroundImage: `url("/src/components/Fooddetail/img/pizza.jpg")` }}
     >
       <div className="flex flex-col gap-1 p-2 bg-zinc-900 absolute opacity-75 bottom-0 w-full">
         <div className="flex justify-between">
