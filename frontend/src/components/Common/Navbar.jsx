@@ -35,7 +35,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`z-50 fixed bg-zinc-900 w-full transition-all duration-300 ${
+        className={`z-50 p-2 fixed bg-zinc-900 w-full transition-all duration-300 ${
           isVissible ? "" : "-translate-y-full"
         }`}
       >
@@ -55,18 +55,18 @@ const Navbar = () => {
             </button>
           </div>
 
-          <div className=" hidden md:flex gap-10 ">
-            <Link className="cursor-pointer" to="/category" onClick={closeMenu}>
+          <div className="text-3xl hidden md:flex  gap-36 ">
+            <Link className="cursor-pointer hover:text-blue-500" to="/category" onClick={closeMenu}>
               Veg
             </Link>
             
-            <Link className="cursor-pointer" to="/category" onClick={closeMenu}>
+            <Link className="cursor-pointer hover:text-blue-500" to="/category" onClick={closeMenu}>
               Non-Veg
             </Link>
           </div>
 
           <div>
-            <CgProfile className="text-3xl text-blue-500" />
+            <CgProfile className="text-3xl md:text-4xl text-blue-500" />
           </div>
         </div>
 

@@ -6,8 +6,8 @@ const Addcategory = () => {
     <div className='min-h-screen text-lg w-full bg-zinc-900 text-white font-["neo-montreal"]'>
         <Navbar />
         <div className='w-full min-h-screen  flex items-center justify-center pt-16 '>
-            <form action="" className=' flex flex-col gap-6 items-center w-[90%] p-4 border-[1px] border-zinc-800 rounded-lg'>
-                <h1 className='capitalize tracking-wider text-3xl'>Add The category of the food</h1>
+            <form action="" className=' flex flex-col gap-6 items-center w-[90%] sm:w-[70%] md:w-[50%] p-4 sm:p-6 md:p-10 border-[1px] border-zinc-800 rounded-xl'>
+                <h1 className='capitalize tracking-wider md:my-10 my-4 text-3xl'>Add The category of the food</h1>
                 <div className=' flex flex-col gap-6'>
                     <div className='flex gap-6'>
                     <label className='w-[50%]'>Image :</label>
@@ -19,7 +19,7 @@ const Addcategory = () => {
                     </div>
                     
                 </div>
-                <button className='bg-blue-500 hover:scale-110 transition-all rounded-lg p-2' type="submit">Submit</button>
+                <button className='md:my-4 bg-blue-500 hover:scale-110 transition-all rounded-lg p-2' type="submit">Submit</button>
 
             </form>
 

@@ -6,16 +6,16 @@ import Footer from "../Common/Footer";
 const SingleDetail = () => {
   return (
     <>
-      <div className="mx-6">
+      <div className="mx-6 md:mx-24 sm:text-lg md:text-xl">
         <div className="grid grid-cols-2 items-center justify-center pt-16 ">
-          <div className="p-6 border-r-[1px] h-full border-zinc-500 mr-6">
+          <div className="p-6 md:p-12 border-r-[1px] h-full border-zinc-500 mr-6 ">
             <img
               className="h-full w-full object-center object-cover rounded-xl"
               src="/src/components/FoodDetail/img/pizza.jpg"
               alt=""
             />
           </div>
-          <div className="flex gap-4 flex-col">
+          <div className="flex gap-4 md:gap-10 flex-col">
             <div className="flex gap-4">
               <p className="w-[30%]">Name :</p>
               <p className="">Pizza</p>

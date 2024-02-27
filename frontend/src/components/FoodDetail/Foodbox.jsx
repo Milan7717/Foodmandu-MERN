@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 const Foodbox = () => {
   return (
     <div className="flex flex-wrap w-full ">
-     <Link to={"/detail"}>
+     <Link to={"/fooddetail"}>
      <div
-      className=" relative h-[30vh] w-[40vh] rounded-xl bg-cover bg-center"
+      className=" relative h-[30vh] w-[40vh] sm:w-[45vh] rounded-xl bg-cover bg-center"
       style={{ backgroundImage: `url("/src/components/Fooddetail/img/pizza.jpg")` }}
     >
       <div className="flex flex-col gap-1 p-2 bg-zinc-900 absolute opacity-75 bottom-0 w-full">

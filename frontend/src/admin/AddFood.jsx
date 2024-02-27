@@ -7,9 +7,9 @@ const AddFood = () => {
       <div className="w-full min-h-screen  flex items-center justify-center pt-16 ">
         <form
           action=""
-          className=" flex flex-col gap-6 items-center w-[90%] p-4 border-[1px] border-zinc-800 rounded-lg"
+          className=" flex flex-col gap-6 items-center w-[90%] sm:w-[70%] md:w-[50%] p-4 sm:p-6 md:p-10 border-[1px] border-zinc-800 rounded-xl"
         >
-          <h1 className="capitalize tracking-wider text-3xl">
+          <h1 className=" md:my-10 my-4 capitalize tracking-wider text-3xl">
             Add The category of the food
           </h1>
           <div className=" flex flex-col gap-6">
@@ -61,7 +61,7 @@ const AddFood = () => {
             </div>
           </div>
           <button
-            className="bg-blue-500 hover:scale-110 transition-all rounded-lg p-2"
+            className="bg-blue-500 hover:scale-110 md:my-4 transition-all rounded-lg p-2"
             type="submit"
           >
             Submit

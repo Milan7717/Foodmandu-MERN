@@ -37,19 +37,19 @@ const Home = () => {
               alt=""
             />
           </div>
-          <div className="z-10 flex flex-col gap-10 text-center text-zinc-200 text-6xl">
+          <div className="z-10 flex flex-col gap-4 sm:gap-10 text-center text-black text-4xl sm:text-5xl md:text-6xl">
             <p>Welcome to foodmandu.</p>
             <p>Order food from the widest range of restaurants.</p>
           </div>
         </div>
       </div>
 
-      <div className="mx-8">
+      <div className="mx-8 sm:mx-12 md:mx-24 lg:mx-32">
         <div className="border-[1px] border-zinc-500 w-full my-10"></div>
 
         {/* //most popular */}
         <div className="min-h-screen w-full my-10">
-          <h1 className="text-4xl my-6">People's Favorite</h1>
+          <h1 className="text-4xl md:text-5xl my-6">People's Favorite</h1>
 
           <Foodbox />
         </div>
@@ -57,8 +57,8 @@ const Home = () => {
         <div className="border-[1px] border-zinc-500 w-full my-10"></div>
 
         {/* categories */}
-        <div className=" h-screen w-full my-10">
-          <h1 className="text-4xl my-6">Categories</h1>
+        <div className=" min-h-screen w-full my-10">
+          <h1 className="text-4xl md:text-5xl  my-6">Categories</h1>
 
           <CategoryList />
         </div>
@@ -67,9 +67,9 @@ const Home = () => {
 
         {/* //about */}
         <div className="my-10">
-          <h1 className="my-6 text-4xl">About Us</h1>
+          <h1 className="my-6 md:text-5xl  text-4xl">About Us</h1>
           <div
-            className="text-center rounded-lg bg-center bg-cover py-12 text-xl text-zinc-100"
+            className="text-center rounded-lg bg-center bg-cover py-12 text-xl sm:text-2xl  text-zinc-100"
             style={{ backgroundImage: `url("/src/pages/img/abouimg.jpg")` }}
           >
             <p className="my-4">

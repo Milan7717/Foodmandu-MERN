@@ -8,10 +8,10 @@ const Login = () => {
         <form
         style={{backgroundImage:`url(/src/pages/img/login.jpg)`}}
           action=""
-          className=" bg-center bg-cover flex flex-col gap-6 items-center w-[90%] p-4 border-[1px] border-zinc-800 rounded-lg"
+          className=" bg-center bg-cover flex flex-col gap-6 items-center w-[90%] sm:w-[70%] md:w-[50%] p-4 sm:p-6 md:p-10 border-[1px] border-zinc-800 rounded-xl"
         >
           <h1 className="capitalize tracking-wider text-4xl bg-blue-900 p-2 rounded-xl font-bold">Login</h1>
-          <div className="flex flex-col  gap-4">
+          <div className="flex flex-col md:gap-10 sm:gap-6 gap-4">
             <div className=" justify-center items-center flex gap-4">
               <label className="w-[40%]">Email :</label>
               <input className="bg-zinc-800  p-2 border-[1px] outline-none border-zinc-500 rounded-lg" type="email"  required/>

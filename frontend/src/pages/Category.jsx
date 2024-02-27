@@ -1,6 +1,6 @@
 import React from "react";
-import Foodbox from "../FoodDetail/Foodbox";
-import Navbar from "../Common/Navbar";
+import Foodbox from "../components/FoodDetail/Foodbox";
+import Navbar from "../components/Common/Navbar";
 
 const Category = () => {
   return (
