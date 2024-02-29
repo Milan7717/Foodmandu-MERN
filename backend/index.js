@@ -2,7 +2,7 @@ import express from "express";
 // import { PORT, mongo_URL } from "./config.js";
 import mongoose from "mongoose";
 import categoryRoute from "./routes/categoryRoute.js";
-import Fooddetail from "./routes/detailRoute.js"
+import Fooddetail from "./routes/detailRoute.js";
 import dotenv from "dotenv"; // Import dotenv
 
 dotenv.config();
@@ -29,7 +29,7 @@ app.listen(process.env.PORT, () => {
 app.use("/category", categoryRoute);
 
 //middleware for details route
-app.use("/detail",Fooddetail);
+app.use("/detail", Fooddetail);
 
 mongoose
   .connect(process.env.MONGO_URL)
