@@ -5,8 +5,8 @@ import "/src/components/style.css";
 import Home from "./pages/Home";
 import FoodDetails from "./pages/FoodDetails";
 import Category from "./pages/Category";
-import Addcategory from "./admin/Addcategory";
-import AddFood from "./admin/AddFood";
+import Addcategory from "./admin/Add/Addcategory";
+import AddFood from "./admin/Add/AddFood";
 import Login from "./admin/Login";
 import Signup from "./admin/Signup";
 
@@ -16,8 +16,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/category" element={<Category />} />
-        <Route path="/fooddetail" element={<FoodDetails />} />
+        <Route path="/category/:id" element={<Category />} />
+        <Route path="/fooddetail/:id" element={<FoodDetails />} />
 
         <Route path="/addcategory" element={<Addcategory />} />
         <Route path="/addfood" element={<AddFood />} />

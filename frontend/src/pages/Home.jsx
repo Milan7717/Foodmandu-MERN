@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Common/Navbar";
 import Foodbox from "../components/FoodDetail/Foodbox";
 import Contact from "../components/Contact";
 import Footer from "../components/Common/Footer";
 import CategoryList from "../components/Category/CategoryList";
+import axios from "axios";
 
 const Home = () => {
+  //category list
+  const [categoryList, setCategoryList] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/category");
+        setCategoryList(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <div className='bg-zinc-900 text-white font-["neo-montreal"]'>
       <Navbar />
@@ -59,8 +76,18 @@ const Home = () => {
         {/* categories */}
         <div className=" min-h-screen w-full my-10">
           <h1 className="text-4xl md:text-5xl  my-6">Categories</h1>
-
-          <CategoryList />
+          <div className="flex flex-wrap w-full md:gap-10 gap-6">
+          {categoryList.map((categoryData, index) => {
+            return (
+              <CategoryList
+                key={index}
+                name={categoryData.name}
+                image={categoryData.image}
+                id={categoryData._id}
+              />
+            );
+          })}
+        </div>
         </div>
 
         <div className="border-[1px] border-zinc-500 w-full my-10"></div>

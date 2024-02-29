@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/Common/Navbar";
+import Navbar from "../../components/Common/Navbar";
 const AddFood = () => {
   return (
     <div className='min-h-screen w-full bg-zinc-900 text-white font-["neo-montreal"]'>

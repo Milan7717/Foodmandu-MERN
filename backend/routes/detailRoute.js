@@ -51,7 +51,7 @@ router.post("/:categoryId", async (req, res) => {
 });
 
 //get one food details
-router.get("/:foodId", async (req, res) => {
+router.get("/food/:foodId", async (req, res) => {
   try {
     const { foodId } = req.params;
     const fooddetails = await Details.findById(foodId);

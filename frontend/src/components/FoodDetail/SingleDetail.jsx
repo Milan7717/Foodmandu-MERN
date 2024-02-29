@@ -3,7 +3,8 @@ import Contact from "../Contact";
 import { FaShoppingCart } from "react-icons/fa";
 import Footer from "../Common/Footer";
 
-const SingleDetail = () => {
+const SingleDetail = (props) => {
+  
   return (
     <>
       <div className="mx-6 md:mx-24 sm:text-lg md:text-xl">
@@ -11,27 +12,27 @@ const SingleDetail = () => {
           <div className="p-6 md:p-12 border-r-[1px] h-full border-zinc-500 mr-6 ">
             <img
               className="h-full w-full object-center object-cover rounded-xl"
-              src="/src/components/FoodDetail/img/pizza.jpg"
+              src={props.image}
               alt=""
             />
           </div>
           <div className="flex gap-4 md:gap-10 flex-col">
             <div className="flex gap-4">
               <p className="w-[30%]">Name :</p>
-              <p className="">Pizza</p>
+              <p className="">{props.name}</p>
             </div>
             <div className="flex gap-4">
               <p className="w-[30%]">Resturant :</p>
-              <p>Hamro resturant</p>
+              <p>{props.resturant}</p>
             </div>
             <div className="flex gap-4">
               <p className="w-[30%]">Price :</p>
-              <p>12345</p>
+              <p>{props.price}</p>
             </div>
-            <div className="flex gap-4">
+            {/* <div className="flex gap-4">
               <p className="w-[30%]">Category :</p>
-              <p>Vegetarian</p>
-            </div>
+              <p>{props.category}</p>
+            </div> */}
             <div className="flex gap-4">
               <label className="w-[30%] " htmlFor="">
                 Quantity :
