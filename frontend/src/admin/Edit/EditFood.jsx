@@ -1,24 +1,29 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../../components/Common/Navbar";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
-const AddFood = () => {
-  const navigate=useNavigate();
-
-  const [category, setCategory] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("");
+const EditFood = () => {
+  const navigate = useNavigate();
 
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [price, setPrice] = useState();
   const [resturant, setResturant] = useState("");
 
+  const { id } = useParams();
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/category");
+        const response = await axios.get(
+          `http://localhost:3000/category/food/${id}`
+        );
+        const categoryData = response.data;
+      console.log(categoryData); 
+      console.log(id); 
         setCategory(response.data);
+        navigate("/fooddetail/:id")
       } catch (error) {
         console.log(error);
       }
@@ -37,11 +42,8 @@ const AddFood = () => {
     };
 
     try {
-      await axios.post(
-        `http://localhost:3000/detail/food/${selectedCategory}`,
-        data
-      );
-      
+      await axios.put(`http://localhost:3000/detail/food/${id}`, data);
+
       alert("Successfully added food");
     } catch (error) {
       console.log(error);
@@ -75,7 +77,7 @@ const AddFood = () => {
             <div className="flex gap-6 text-lg">
               <label className="w-[50%]">Resturant Name :</label>
               <input
-               className="bg-transparent outline-none border-[1px] border-zinc-800 rounded-lg p-1"
+                className="bg-transparent outline-none border-[1px] border-zinc-800 rounded-lg p-1"
                 type="text"
                 value={resturant}
                 name="resturant"
@@ -94,29 +96,6 @@ const AddFood = () => {
                 onChange={(e) => setPrice(e.target.value)}
                 required
               />
-            </div>
-            <div className="flex gap-6 text-lg">
-              <label className="w-[50%]">Category :</label>
-
-              <select
-                value={selectedCategory}
-                onChange={(e) => setSelectedCategory(e.target.value)}
-                required
-                className="bg-transparent"
-              >
-                <option value="" className="text-red-600">
-                  Select category
-                </option>
-                {category.map((category) => (
-                  <option
-                    key={category._id}
-                    value={category._id}
-                    className="text-red-600"
-                  >
-                    {category.name}
-                  </option>
-                ))}
-              </select>
             </div>
 
             <div className="flex gap-6 text-lg">
@@ -143,4 +122,4 @@ const AddFood = () => {
   );
 };
 
-export default AddFood;
+export default EditFood;

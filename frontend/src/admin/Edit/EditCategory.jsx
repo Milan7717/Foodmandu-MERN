@@ -1,12 +1,27 @@
-import React, { useState } from "react";
-import Navbar from "../../components/Common/Navbar";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import Navbar from "../../components/Common/Navbar";
 
-const Addcategory = () => {
+const EditCategory = () => {
   const navigate = useNavigate();
   const [image, setImage] = useState("");
   const [name, setName] = useState("");
+  const { id } = useParams();
+
+  useEffect(() => {
+    try {
+      const response = axios.get(`http://localhost:3000/category/${id}`);
+      const categoryData = response.data;
+      console.log(categoryData); 
+      console.log(id); 
+      
+      setName(categoryData.name);
+      setImage(categoryData.image);
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
 
   const handleSubmit = async () => {
     const data = {
@@ -14,12 +29,12 @@ const Addcategory = () => {
       image,
     };
     try {
-      await axios.post("http://localhost:3000/category", data);
-      alert("Successfully catgeory added");
+      await axios.put(`http://localhost:3000/category/${id}`, data);
       navigate("/");
+      alert("Successfully edited category");
     } catch (error) {
       console.log(error);
-      alert("error adding category");
+      alert("error editing category");
     }
   };
 
@@ -35,7 +50,7 @@ const Addcategory = () => {
             Add The category of the food
           </h1>
           <div className=" flex flex-col gap-6">
-          <div className="flex gap-6">
+            <div className="flex gap-6">
               <label className="w-[50%]">Name of category :</label>
               <input
                 type="text"
@@ -59,7 +74,6 @@ const Addcategory = () => {
                 required
               />
             </div>
-           
           </div>
           <button
             onClick={handleSubmit}
@@ -73,4 +87,4 @@ const Addcategory = () => {
   );
 };
 
-export default Addcategory;
+export default EditCategory;
