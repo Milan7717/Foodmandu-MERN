@@ -2,9 +2,7 @@ import React from "react";
 import Contact from "../Contact";
 import { FaShoppingCart } from "react-icons/fa";
 import Footer from "../Common/Footer";
-import { Link } from "react-router-dom";
-import { AiOutlineEdit } from "react-icons/ai";
-import { MdOutlineDelete } from "react-icons/md";
+
 const SingleDetail = (props) => {
   
   return (
@@ -50,14 +48,7 @@ const SingleDetail = (props) => {
               <FaShoppingCart className="text-xl text-orange-800" />
             </div>
           </div>
-          <div className="flex justify-center gap-x-4">
-          <Link to={`/editfood/${props.id}`}>
-            <AiOutlineEdit className="text-2xl text-yellow-600" />
-          </Link>
-          <Link to={`/deletefood/${props.id}`}>
-            <MdOutlineDelete className="text-2xl text-red-600" />
-          </Link>
-        </div>
+          
         </div>
         <div className="border-[1px] border-zinc-500 w-full my-10"></div>
         <Contact />

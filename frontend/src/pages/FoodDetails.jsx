@@ -32,6 +32,7 @@ const FoodDetails = () => {
           resturant={foodData.resturant}
           price={foodData.price}
           image={foodData.image}
+          id={foodData._id}
         />
       </div>
     </div>
