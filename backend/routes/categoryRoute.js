@@ -2,7 +2,22 @@ import express from "express";
 import mongoose from "mongoose";
 import { Category } from "../models/categoryModel.js";
 
+import multer from "multer";
+import path from "path";
+
 const router = express.Router();
+
+// Multer configuration
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "public/img"); // Define the destination folder for uploaded files
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + path.extname(file.originalname)); // Define the filename to avoid conflicts
+  },
+});
+
+const upload = multer({ storage: storage });
 
 //get all category
 router.get("/", async (req, res) => {
@@ -16,7 +31,7 @@ router.get("/", async (req, res) => {
 });
 
 //post category to database
-router.post("/", async (req, res) => {
+router.post("/", upload.single("image"), async (req, res) => {
   try {
     if (!req.body.name || !req.body.image) {
       return res.status(400).send({
@@ -25,7 +40,7 @@ router.post("/", async (req, res) => {
     }
     const newCategory = {
       name: req.body.name,
-      image: req.body.image,
+      image: req.file.path, // Save the path of the uploaded image
     };
     const category = await Category.create(newCategory);
     return res.status(201).send(category);

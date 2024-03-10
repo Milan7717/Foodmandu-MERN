@@ -3,8 +3,9 @@ import express from "express";
 import mongoose from "mongoose";
 import categoryRoute from "./routes/categoryRoute.js";
 import Fooddetail from "./routes/detailRoute.js";
-import dotenv from "dotenv"; // Import dotenv
 
+
+import dotenv from "dotenv"; // Import dotenv
 dotenv.config();
 
 import cors from "cors";

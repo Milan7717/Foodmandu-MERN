@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Common/Navbar";
-import Foodbox from "../components/FoodDetail/Foodbox";
+import Foodbox from "../components/Foodbox";
 import Contact from "../components/Contact";
 import Footer from "../components/Common/Footer";
-import CategoryList from "../components/Category/CategoryList";
+import CategoryList from "../components/CategoryList";
 import axios from "axios";
 
 const Home = () => {
@@ -77,17 +77,17 @@ const Home = () => {
         <div className=" min-h-screen w-full my-10">
           <h1 className="text-4xl md:text-5xl  my-6">Categories</h1>
           <div className="flex flex-wrap w-full md:gap-10 gap-6">
-          {categoryList.map((categoryData, index) => {
-            return (
-              <CategoryList
-                key={index}
-                name={categoryData.name}
-                image={categoryData.image}
-                id={categoryData._id}
-              />
-            );
-          })}
-        </div>
+            {categoryList.map((categoryData, index) => {
+              return (
+                <CategoryList
+                  key={index}
+                  name={categoryData.name}
+                  image={categoryData.image}
+                  id={categoryData._id}
+                />
+              );
+            })}
+          </div>
         </div>
 
         <div className="border-[1px] border-zinc-500 w-full my-10"></div>

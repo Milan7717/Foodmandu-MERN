@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import SingleFoodDetail from "../../components/SingleFoodDetail";
 
-import SingleDetail from "../../components/FoodDetail/SingleDetail";
-import Navbar from "../../components/Common/Navbar";
 
 const AdminFooddetails = () => {
   const [foodData, setFoodData] = useState({});
@@ -27,9 +25,9 @@ const AdminFooddetails = () => {
 
   return (
     <div className='bg-zinc-900 text-white font-["neo-montreal"] min-h-screen w-full '>
-      <Navbar />
+     
       <div>
-        <SingleDetail
+        <SingleFoodDetail
           name={foodData.name}
           resturant={foodData.resturant}
           price={foodData.price}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Common/Navbar";
-import SingleDetail from "../components/FoodDetail/SingleDetail";
+import SingleDetail from "../components/SingleFoodDetail";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 

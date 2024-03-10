@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Navbar from "../../components/Common/Navbar";
+import Navbar from "../components/Common/Navbar";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -7,21 +7,37 @@ const Addcategory = () => {
   const navigate = useNavigate();
   const [image, setImage] = useState("");
   const [name, setName] = useState("");
+ 
 
-  const handleSubmit = async () => {
-    const data = {
-      name,
-      image,
-    };
+// Handle file input change
+const handleFileChange = (e) => {
+  setImage(e.target.files[0]); // Get the first file from the array
+};
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+
+    // Create FormData object to send files
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("image", image);
+
     try {
-      await axios.post("http://localhost:3000/category", data);
-      alert("Successfully catgeory added");
+      await axios.post("http://localhost:3000/category", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data", // Set proper content type
+        },
+      });
+      alert("Successfully category added");
       navigate("/");
     } catch (error) {
       console.log(error);
-      alert("error adding category");
+      alert("Error adding category");
     }
   };
+
+
 
   return (
     <div className='min-h-screen text-lg w-full bg-zinc-900 text-white font-["neo-montreal"]'>
@@ -52,10 +68,9 @@ const Addcategory = () => {
               <label className="w-[50%]">Image :</label>
               <input
                 type="file"
-                value={image}
                 accept="image/*"
                 name="image"
-                onChange={(e) => setImage(e.target.value)}
+                onChange={handleFileChange} // Changed to handleFileChange
                 required
               />
             </div>

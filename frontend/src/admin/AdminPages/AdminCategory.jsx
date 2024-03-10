@@ -3,8 +3,9 @@ import React, { useEffect, useState } from "react";
 
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import Foodbox from "../../components/FoodDetail/Foodbox";
-import Navbar from "../../components/Common/Navbar";
+
+import AdminFoodBox from "../AdminComponents/AdminFoodBox";
+
 
 const AdminCategory = () => {
     const [category, setCategory] = useState([]);
@@ -26,12 +27,12 @@ const AdminCategory = () => {
     return (
       <>
         <div className='bg-zinc-900 text-white font-["neo-montreal"] min-h-screen w-full'>
-         <Navbar />
+         
           <div className="pt-16 mx-10">
           <div className="flex flex-wrap w-full md:gap-10 gap-6 ">
             {category.map((data, index) => {
               return (
-                <Foodbox
+                <AdminFoodBox
                   key={index}
                   name={data.name}
                   resturant={data.resturant}

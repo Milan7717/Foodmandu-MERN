@@ -1,10 +1,9 @@
 import React from "react";
-import Contact from "../Contact";
+import Contact from "./Contact";
 import { FaShoppingCart } from "react-icons/fa";
-import Footer from "../Common/Footer";
+import Footer from "./Common/Footer";
 
-const SingleDetail = (props) => {
-  
+const SingleFoodDetail = (props) => {
   return (
     <>
       <div className="mx-6 md:mx-24 sm:text-lg md:text-xl">
@@ -48,7 +47,6 @@ const SingleDetail = (props) => {
               <FaShoppingCart className="text-xl text-orange-800" />
             </div>
           </div>
-          
         </div>
         <div className="border-[1px] border-zinc-500 w-full my-10"></div>
         <Contact />
@@ -58,4 +56,4 @@ const SingleDetail = (props) => {
   );
 };
 
-export default SingleDetail;
+export default SingleFoodDetail;

@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import Navbar from "../../components/Common/Navbar";
+import Navbar from "../components/Common/Navbar";
 
 const EditCategory = () => {
   const navigate = useNavigate();

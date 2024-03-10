@@ -17,7 +17,7 @@ router.get("/:categoryId", async (req, res) => {
 });
 
 //post the details to that category
-router.post("/:categoryId", async (req, res) => {
+router.post("/food/:categoryId", async (req, res) => {
   const { categoryId } = req.params;
   try {
     const categoryExist = await Category.findById(categoryId);
@@ -62,7 +62,7 @@ router.get("/food/:foodId", async (req, res) => {
 });
 
 //put one food details
-router.put("/:foodId", async (req, res) => {
+router.put("/food/:foodId", async (req, res) => {
   try {
     if (
       !req.body.name ||
@@ -88,22 +88,21 @@ router.put("/:foodId", async (req, res) => {
 });
 //delete one food details
 //put one food details
-router.delete("/:foodId", async (req, res) => {
-    try {
-     
-      const { foodId } = req.params;
-      const fooddetail = await Details.findByIdAndDelete(foodId);
-      if (!fooddetail) {
-        return res.status(404).json("Food details not found");
-      }
-  
-      return res.status(200).json("Successfully deleted");
-    } catch (error) {
-      console.log(error);
-      return res
-        .status(500)
-        .send({ message: "error deleting", error: error.message });
+router.delete("/food/:foodId", async (req, res) => {
+  try {
+    const { foodId } = req.params;
+    const fooddetail = await Details.findByIdAndDelete(foodId);
+    if (!fooddetail) {
+      return res.status(404).json("Food details not found");
     }
-  });
+
+    return res.status(200).json("Successfully deleted");
+  } catch (error) {
+    console.log(error);
+    return res
+      .status(500)
+      .send({ message: "error deleting", error: error.message });
+  }
+});
 
 export default router;

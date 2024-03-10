@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Foodbox from "../components/FoodDetail/Foodbox";
+import Foodbox from "../components/Foodbox";
 import Navbar from "../components/Common/Navbar";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -27,20 +27,20 @@ const Category = () => {
       <div className='bg-zinc-900 text-white font-["neo-montreal"] min-h-screen w-full'>
         <Navbar />
         <div className="pt-16 mx-10">
-        <div className="flex flex-wrap w-full md:gap-10 gap-6 ">
-          {category.map((data, index) => {
-            return (
-              <Foodbox
-                key={index}
-                name={data.name}
-                resturant={data.resturant}
-                image={data.image}
-                price={data.price}
-                id={data._id}
-              />
-            );
-          })}
-          </div> 
+          <div className="flex flex-wrap w-full md:gap-10 gap-6 ">
+            {category.map((data, index) => {
+              return (
+                <Foodbox
+                  key={index}
+                  name={data.name}
+                  resturant={data.resturant}
+                  image={data.image}
+                  price={data.price}
+                  id={data._id}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     </>
