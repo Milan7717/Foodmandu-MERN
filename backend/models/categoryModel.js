@@ -18,5 +18,5 @@ const categorySchema = new mongoose.Schema(
   }
 );
 
-//export name, mongoosle db name
+//export name, mongoose db name
 export const Category = mongoose.model("FoodCategory", categorySchema);
